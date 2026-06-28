@@ -31,7 +31,7 @@ def guardar_usuarios(usuarios):
     
     for usuario in usuarios:
         cursor.execute("""
-            INSERT INTO usuarios (id, nombre, usuario, email, telefono, sitio_web)
+            INSERT OR IGNORE INTO usuarios (id, nombre, usuario, email, telefono, sitio_web)
             VALUES (?, ?, ?, ?, ?, ?) 
         """, (
             usuario["id"],
